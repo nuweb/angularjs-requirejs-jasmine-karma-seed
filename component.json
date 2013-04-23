@@ -6,8 +6,10 @@
     "angular-resource": "~1.0.6",
     "angular-cookies": "~1.0.6",
     "angular-sanitize": "~1.0.6",
-    "bootstrap" : "latest",
-    "jquery" : "latest"
+    "jquery" : "latest",
+    "bootstrap" : "http://twitter.github.com/bootstrap/assets/bootstrap.zip",
+    "modernizr": "~2.6.1",
+    "requirejs": "latest"
   },
   "devDependencies": {
     "angular-mocks": "~1.0.6",
