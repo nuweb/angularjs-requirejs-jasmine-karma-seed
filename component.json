@@ -2,15 +2,15 @@
   "name": "AngularSeed",
   "version": "0.0.0",
   "dependencies": {
-    "angular": "~1.0.5",
-    "angular-resource": "~1.0.5",
-    "angular-cookies": "~1.0.5",
-    "angular-sanitize": "~1.0.5",
+    "angular": "~1.0.6",
+    "angular-resource": "~1.0.6",
+    "angular-cookies": "~1.0.6",
+    "angular-sanitize": "~1.0.6",
     "bootstrap" : "latest",
     "jquery" : "latest"
   },
   "devDependencies": {
-    "angular-mocks": "~1.0.5",
-    "angular-scenario": "~1.0.5"
+    "angular-mocks": "~1.0.6",
+    "angular-scenario": "~1.0.6"
   }
 }
