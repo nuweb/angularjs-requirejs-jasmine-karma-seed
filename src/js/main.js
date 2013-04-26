@@ -2,10 +2,10 @@
 
 require.config({
 	paths: {
-		'jquery': '/components/jquery/jquery',
-		'bootstrap': '/components/bootstrap/js/bootstrap',
-		'angular': '/components/angular/angular',
-		'angularResource': '/components/angular-resource/angular-resource'
+		jquery: '/components/jquery/jquery',
+		bootstrap: '/components/bootstrap/js/bootstrap',
+		angular: '/components/angular/angular',
+		angularResource: '/components/angular-resource/angular-resource'
 	},
 	shim: {
 		'angular': {'exports' : 'angular'},
@@ -20,12 +20,10 @@ require.config({
 require([
 	'angular',
 	'app',
+	'routes',
 	'services/services',
-	'controllers/controllers',
-	'filters/filters',
-	'directives/directives',
-	'services/services'
-], function(angular, app){
+	'controllers/controllers'
+], function(angular, app, routes){
 	angular.element(document).ready(function() {
 		angular.bootstrap(document, ['AngularSeed']);
 	});

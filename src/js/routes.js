@@ -1,12 +1,17 @@
-define(['app', 'controllers/controllers'], function(app, controller){
+define([
+  'app',
+  'controllers/controllers'
+], function(app, controller){
   return app.config(['$routeProvider', function($routeProvider){
+    console.log("$routeProvider: ");
+    console.log($routeProvider);
     $routeProvider
     .when('/home', {
-      templateUrl: 'home.html',
+      templateUrl: '/views/home.html',
       controller: 'HomeCtrl'
     })
     .when('/about', {
-      templateUrl: 'about.html',
+      templateUrl: '/views/about.html',
       controller: 'AboutCtrl'
     })
     .otherwise({
