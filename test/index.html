@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Jasmine Spec Runner</title>
+
+  <link rel="shortcut icon" type="image/png" href="lib/jasmine-1.3.1/jasmine_favicon.png">
+  <link rel="stylesheet" type="text/css" href="/src/components/jasmine/lib/jasmine-core/jasmine.css">
+
+  <script src="/src/components/angular/angular.js"></script>
+  <script src="/src/components/angular-resource/angular-resource.js"></script>
+  <script src="/src/components/jasmine/lib/jasmine-core/jasmine.js"></script>
+  <script src="/src/components/jasmine/lib/jasmine-core/jasmine-html.js"></script>
+  <script src="/src/components/angular-mocks/angular-mocks.js"></script>
+
+  <!-- include source files here... -->
+  <script src="/src/js/app.js"></script>
+
+  <!-- include spec files here... -->
+  <script src="unit/appSpec.js"></script>
+
+  <script>
+    (function() {
+      var jasmineEnv = jasmine.getEnv();
+      jasmineEnv.updateInterval = 1000;
+
+      var htmlReporter = new jasmine.HtmlReporter();
+
+      jasmineEnv.addReporter(htmlReporter);
+
+      jasmineEnv.specFilter = function(spec) {
+        return htmlReporter.specFilter(spec);
+      };
+
+      var currentWindowOnload = window.onload;
+
+      window.onload = function() {
+        if (currentWindowOnload) {
+          currentWindowOnload();
+        }
+        execJasmine();
+      };
+
+      function execJasmine() {
+        jasmineEnv.execute();
+      }
+
+    })();
+  </script>
+
+</head>
+
+<body>
+</body>
+</html>

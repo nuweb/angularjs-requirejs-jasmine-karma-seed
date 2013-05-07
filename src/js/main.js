@@ -1,32 +1,32 @@
-// CNID Bootstrap: Alias configuration
-
 require.config({
-	paths: {
-		'jquery': '/components/jquery/jquery',
-		'bootstrap': '/components/bootstrap/js/bootstrap',
-		'angular': '/components/angular/angular',
-		'angularResource': '/components/angular-resource/angular-resource'
-	},
-	shim: {
-		'angular': {'exports' : 'angular'},
-		'angular-resource': {deps: ['angular']},
-		'bootstrap': {deps: ['jquery']}
-	},
-	priority: [
-		"angular"
-	]
+  paths: {
+    angular: 'libs/angular',
+    angularResource: 'libs/angular-resource'
+  },
+  shim: {
+    'controllers/homeCtrl': {
+      deps: ['app']
+    },
+    'controllers/aboutCtrl': {
+      deps: ['app']
+    },
+    'angularResource': {
+      deps: ['angular']
+    },
+    'app': {
+      deps: ['angular', 'angularResource']
+    },
+    'bootstrap': {
+      deps: ['app']
+    },
+    'routes': {
+      deps: ['app']
+    }
+  }
 });
 
-require([
-	'angular',
-	'app',
-	'services/services',
-	'controllers/controllers',
-	'filters/filters',
-	'directives/directives',
-	'services/services'
-], function(angular, app){
-	angular.element(document).ready(function() {
-		angular.bootstrap(document, ['AngularSeed']);
-	});
+require(['controllers/homeCtrl', 'controllers/aboutCtrl', 'routes'], function(){
+  return angular.element(document).ready(function() {
+    angular.bootstrap(document, ['app']);
+  });
 });

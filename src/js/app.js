@@ -1,3 +1,12 @@
-define(['angular'], function(angular){
-	return angular.module('AngularSeed', []);
+angular.module('app', ['ngResource']).
+factory('alert', function($window) {
+    return function(text) {
+		$window.alert(text);
+    };
+}).
+value('salutation', 'Hello').
+factory('greet', function(alert, salutation) {
+	return function(name) {
+		alert(salutation + ' ' + name + '!');
+	};
 });
